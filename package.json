@@ -1,0 +1,24 @@
+{
+  "name": "the-collection",
+  "version": "1.0.0",
+  "description": "This is a javascript project, the goal is to load every single movie the user want to add, he might be able to remove it (set as a bonus).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx watch -i ./style.css -o ./dist/output.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Robpiot/The-collection.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Robpiot/The-collection/issues"
+  },
+  "homepage": "https://github.com/Robpiot/The-collection#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
