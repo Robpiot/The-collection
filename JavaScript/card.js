@@ -87,9 +87,9 @@ function cardHeader(link) {
     const article = document.createElement('article');
     const div = document.createElement('div');
     const img = document.createElement('img');
-    img.className = 'rounded-full w-35 h-35'
-    article.className = '';
-    div.className = '';
+    img.className = 'p-8 rounded-t-lg'
+    article.className = 'flex w-full max-w-sm border border-gray-200 rounded-lg shadow bg-black-200 dark:bg-gray-800 dark:border-gray-700';
+    div.className = 'flex items-center mt-2.5 mb-5';
     article.id ='card'
     img.src = link;
     
@@ -102,7 +102,7 @@ function cardHeader(link) {
 function badges(Genre) {
     const badge = document.getElementById('badge');
     
-    badge.className = 'text-size'
+    badge.className = 'w-4 h-4 mr-1 text-yellow-300'
     if(!Array.isArray(Genre)) {
         Genre = [Genre]
     }
@@ -120,7 +120,7 @@ function cardTitle(Name, Release) {
     const title = document.createElement('h3');
     const paragraphe = document.createElement('p');
     
-    
+    title.className = 'text-xl font-semibold tracking-tight text-gray-900 dark:text-white'
     paragraphe.classList= '';
     
     title.innerHTML = Name; 
@@ -136,7 +136,7 @@ function cardAuthor(item) {
     const authorName = document.createElement('h3');
     
     authorName.innerHTML = author;
-    author.className = 'text-center';
+    author.className = '';
     author.append(list);
     author.append(authorName);
     
