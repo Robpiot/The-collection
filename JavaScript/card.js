@@ -87,6 +87,9 @@ function cardHeader(link) {
     const article = document.createElement('article');
     const div = document.createElement('div');
     const img = document.createElement('img');
+    img.className = 'rounded-full w-35 h-35'
+    article.className = '';
+    div.className = '';
     article.id ='card'
     img.src = link;
     
@@ -99,7 +102,7 @@ function cardHeader(link) {
 function badges(Genre) {
     const badge = document.getElementById('badge');
     
-    badge.className = ''
+    badge.className = 'text-size'
     if(!Array.isArray(Genre)) {
         Genre = [Genre]
     }
@@ -133,7 +136,7 @@ function cardAuthor(item) {
     const authorName = document.createElement('h3');
     
     authorName.innerHTML = author;
-    author.className = 'a';
+    author.className = 'text-center';
     author.append(list);
     author.append(authorName);
     
@@ -192,7 +195,7 @@ function cardFooter () {
     footer.id = 'card-footer';
     img.src='../Assets/spotify.svg'
     link.href = 'https://www.spotify.com';
-    
+    link.className = 'text-center white'
     link.append(img);
     footer.append(link);
     article.append(footer)
