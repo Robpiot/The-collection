@@ -1,6 +1,6 @@
 const collection = [
     {
-        cover : "../Assets/81ogsUqshzL.jpg",
+        cover : "./Assets/81ogsUqshzL.jpg",
         Name : "Thriller",
         Genre : "Contemporary RNB, Pop",
         Author : "Michael Jackson",
@@ -8,7 +8,7 @@ const collection = [
         
     },
     {
-        cover : "../Assets/ACDC_Back_in_Black_cover.svg.png",
+        cover : "./Assets/ACDC_Back_in_Black_cover.svg.png",
         Name : "Back in Black",
         Genre : ["Rock"],
         Author : "AC/DC",
@@ -16,7 +16,7 @@ const collection = [
         
     },
     {
-        cover : "../Assets/The_Bodyguard_Original_Soundtrack_Album_Bande_Originale.jpg",
+        cover : "./Assets/The_Bodyguard_Original_Soundtrack_Album_Bande_Originale.jpg",
         Name : "The Bodyguard",
         Genre : "Pop",
         Author : "Various Artists",
@@ -24,7 +24,7 @@ const collection = [
         
     },
     {
-        cover : "../Assets/the_very_best_of_the_eagles.jpg",
+        cover : "./Assets/the_very_best_of_the_eagles.jpg",
         Name : "The very best of the Eagles",
         Genre : "Rock",
         Author : "Eagles",
@@ -32,7 +32,7 @@ const collection = [
         
     },
     {
-        cover : "../Assets/saturday_night_fever_the_original_movie_sound_track_Bande_Originale.jpg",
+        cover : "./Assets/saturday_night_fever_the_original_movie_sound_track_Bande_Originale.jpg",
         Name : "Saturday Night Fever",
         Genre : "Disco",
         Author : "Various Artists",
@@ -40,7 +40,7 @@ const collection = [
         
     },
     {
-        cover : "../Assets/the_dark_side_of_the_moon.webp",
+        cover : "./Assets/the_dark_side_of_the_moon.webp",
         Name : "The Dark Side Of The Moon",
         Genre : "Art Rock",
         Author : "Pink Floyd",
@@ -48,7 +48,7 @@ const collection = [
         
     },
     {
-        cover : "../Assets/bat_out_of_hell.jpg",
+        cover : "./Assets/bat_out_of_hell.jpg",
         Name : "Bat Out Of Hell",
         Genre : "Rock",
         Author : "Meat Load",
@@ -56,7 +56,7 @@ const collection = [
         
     },
     {
-        cover : "../Assets/come_on_over.jpg",
+        cover : "./Assets/come_on_over.jpg",
         Name : "Come On Over",
         Genre : "Pop Rock",
         Author : "Shania Twain",
@@ -64,7 +64,7 @@ const collection = [
         
     },
     {
-        cover : "../Assets/sgt_peppers_lonely_hearts_club_band.jpg",
+        cover : "./Assets/sgt_peppers_lonely_hearts_club_band.jpg",
         Name : "SGT Peppers lonely Hearts Club Band",
         Genre : "Pop Rock",
         Author : "The Beatles",
@@ -72,7 +72,7 @@ const collection = [
         
     },
     {
-        cover : "../Assets/falling_into_you.jpg",
+        cover : "./Assets/falling_into_you.jpg",
         Name : "Falling Into You",
         Genre : "Pop",
         Author : "Céline Dion",
@@ -102,7 +102,7 @@ function cardHeader(link) {
 function badges(Genre) {
     const badge = document.getElementById('badge');
     
-    badge.className = 'w-4 h-4 mr-1 text-yellow-300'
+    badge.className = 'relative w-4 h-4 mr-1 text-yellow-300'
     if(!Array.isArray(Genre)) {
         Genre = [Genre]
     }
@@ -168,6 +168,7 @@ function cardBody(Name, Genre, Release, Author) {
     title.id = 'author'
     release.id = 'release'
     
+    
     body.className = '';
     badge.className = '';
     
@@ -176,7 +177,7 @@ function cardBody(Name, Genre, Release, Author) {
     body.append(title),
     body.append(release);
     
-    article.className = '';
+    article.className = 'flex-col bg-yellow-200 column margin-5';
     badges(Genre);
     cardTitle(Name,Release)
     cardAuthor(Author)
@@ -193,9 +194,10 @@ function cardFooter () {
     const img = document.createElement('img');
     
     footer.id = 'card-footer';
-    img.src='../Assets/spotify.svg'
+    img.src='./Assets/spotify.svg'
+    img.className = 'justify-center'
     link.href = 'https://www.spotify.com';
-    link.className = 'text-center white'
+    link.className = ''
     link.append(img);
     footer.append(link);
     article.append(footer)
@@ -203,8 +205,8 @@ function cardFooter () {
 }
 function card() {
     collection.forEach(element => {
-        let link = element.cover;
         let name = element.Name;
+        let link = element.cover;
         let release = element.Release;
         let genre = element.Genre;
         let author = element.Author;
